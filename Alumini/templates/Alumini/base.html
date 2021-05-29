@@ -1,0 +1,226 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>GECA ALLUMINI</title>
+  <!-- MDB icon -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="icon" href="{% static 'Alumini/img/clg/L1.jpg' %}" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'Alumini/css/bootstrap.min.css' %}">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="{% static 'Alumini/css/mdb.min.css' %}">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="{% static 'Alumini/css/style.css' %}">
+
+
+  
+    
+</head>  
+<body>
+
+  <html lang="en" class="full-height">
+
+<!--Main Navigation-->
+<header>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo">
+    <a class="navbar-brand" href="#"><strong>Government College Of Engineering, Aurangabad.</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'Alumini-index' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog' %}">Blogs</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Sign In</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'post-create' %}">Add Blogs</a> 
+        </li>
+        <li class="nav-item avatar">
+          <a class="nav-link p-0" href="#">
+            <img src="{{ user.profile.image.url }}" class="rounded-circle z-depth-0"
+              alt="geca image" height="35">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello , {{user.first_name}}</a>
+        </li>
+        
+      </ul>
+      {% endif %}
+   
+    </div>
+  </nav>
+
+</head>
+{% block content %} 
+
+{% endblock content %}
+<!-- Footer -->
+<div class="footer">
+<footer class="page-footer font-small indigo">
+
+    <!-- Footer Links -->
+    <div class="container">
+  
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="{% url 'about' %}">About us</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="{% url 'gallery' %}">Gallery</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="{% url 'act' %}">Activities</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="{% url 'help' %}">Help</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="{% url 'contact' %}">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+      <hr class="rgba-white-light" style="margin: 0 15%;">
+  
+      <!-- Grid row-->
+      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+  
+        <!-- Grid column -->
+        <div class="col-md-8 col-12 mt-5">
+          <h4>Dr. P.B. Murnal</h4>
+          <p style="line-height: 1.7rem">Dear all,
+            I wish all faculty and staff shall have theirs’ contribution in shaping the engineers of the future. The educational institute like this one forms the important building block in development of the nation. May we all be conferred upon that wisdom and beneficial feelings in the heart to support the structure of this institute serving in the field of technical education! Students need to make best out of available facilities to create better tomorrows.</p>
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+  
+      <!-- Grid row-->
+      <div class="row pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-12">
+  
+          <div class="mb-5 flex-center">
+  
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://www.facebook.com/105869414090954/photos/p.162525531758675/162525531758675/">
+              <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic" href="https://twitter.com/gecawings/">
+              <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+            </a>
+  
+            <!--Linkedin -->
+            <a class="li-ic" href="https://www.linkedin.com/school/government-engineering-college-aurangabad/about/">
+              <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fab fa-pinterest fa-lg white-text"> </i>
+            </a>
+  
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 GECA:
+      <a href="https://mdbootstrap.com/"> www.geca.ac.in</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+</div>
+  <!-- Footer -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'Alumini/js/jquery.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'Alumini/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'Alumini/js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'Alumini/js/mdb.min.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+   
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+    
+  
+  </body>
+  </html>

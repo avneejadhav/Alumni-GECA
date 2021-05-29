@@ -1,0 +1,9 @@
+.main{
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.5s;
+    border:solid 1px black;
+    }
+    .row{
+        padding-top: 30px;
+    }

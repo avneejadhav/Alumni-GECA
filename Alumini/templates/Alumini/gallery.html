@@ -1,0 +1,151 @@
+{% extends 'Alumini/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<!-- Grid row -->
+<div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-12 d-flex justify-content-center mb-5">
+    
+        <h2 class="my-5 h3 text-center">About Recent Events</h2>
+  
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+  <!-- Grid row -->
+  
+  <!-- Grid row -->
+  <div class="gallery" id="gallery">
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g10.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g12.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g13.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g9.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g8.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g7.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+</div>
+<div class="container"> 
+
+<div class="row">
+
+    <!-- Grid column -->
+  
+  </div>
+  <!-- Grid row -->
+  
+  <!-- Grid row -->
+  <div class="gallery" id="gallery">
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g6.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g5.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g4.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g3.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g2.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="{% static 'Alumini/img/clg/g1.jpg' %}" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+</div>
+</div>
+  <!-- Grid row -->
+
+  <style>
+    .gallery {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-width: 33%;
+        -moz-column-width: 33%;
+        column-width: 33%; }
+        .gallery .pics {
+        -webkit-transition: all 350ms ease;
+        transition: all 350ms ease; }
+        .gallery .animation {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1); }
+        
+        @media (max-width: 450px) {
+        .gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
+        }
+        }
+        
+        @media (max-width: 400px) {
+        .btn.filter {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+        }
+        }
+  </style>
+ 
+
+  
+
+  {% endblock content %}

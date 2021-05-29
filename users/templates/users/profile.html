@@ -1,0 +1,33 @@
+{% extends "Alumini/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container" style="padding-top: 80px">
+<div class="media">
+    <img src="{{ user.profile.image.url }}" class="rounded-circle z-depth-0"
+              alt="Add image" height="100">
+    <div class="media-body">
+      <h3 class="mt-0 font-weight-bold">{{ user.username }}</h3>
+     {{ user.email}}
+    </div>
+  </div>
+</div>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Profile Info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+</form>
+</div>
+<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    {%for message in messages %}
+        <h3>{{message}}</h3>
+    {% endfor %}
+         </small>
+
+{% endblock content %}
+

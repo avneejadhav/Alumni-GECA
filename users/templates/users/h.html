@@ -1,0 +1,49 @@
+{% extends "Alumini/base.html" %}
+{% block content %}
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<center><a href="{% url 'add' %}" class="btn btn-primary">Add Blogs</a></center>
+    {% for post in posts %}
+    <div class="container">
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="{{ user.profile.image.url }}">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">{{ post.title }}</h4>
+                <p class="text-right">{{ user.username }}</p>
+                <p>{{ post.content }}</p>
+                <ul class="list-inline list-unstyled">
+                    <li><span><i class="glyphicon glyphicon-calendar"></i>{{ post.date_posted|date:"F d, Y" }}</span></li>
+                  <li>|</li>
+                 
+                  </ul>
+             </div>
+          </div>
+        </div>
+    </div> 
+    {% endfor %}
+{% endblock content %}
+"""@login_required
+def blog(request):
+    context = {
+        'posts': Post.objects.order_by('-date_posted')
+    }
+    return render(request, 'Alumini/blog.html', context)
+
+def contact(request):
+    return render(request,'Alumini/contact.html')
+
+def add(request):
+    if request.method == 'POST':
+        form = Postform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("Alumini-index")
+    else:
+        form = Postform()
+
+    context = {'form':form}
+    return render(request, 'Alumini/add.html', context)"""
